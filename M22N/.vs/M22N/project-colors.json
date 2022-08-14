@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0cb85043-46fb-4c03-bad0-5bef8c65bd16": {
+      "ProjectGuid": "0cb85043-46fb-4c03-bad0-5bef8c65bd16",
+      "DisplayName": "M22N",
+      "ColorIndex": 0
+    },
+    "86aab9a9-82cb-4511-a0f6-d34dd1c0d476": {
+      "ProjectGuid": "86aab9a9-82cb-4511-a0f6-d34dd1c0d476",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
