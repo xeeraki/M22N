@@ -188,6 +188,7 @@ C:\BACKED\REPO\M22N\M220NTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPla
 C:\BACKED\REPO\M22N\M220NTests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\BACKED\REPO\M22N\M220NTests\bin\Debug\netcoreapp3.1\M220N.dll
 C:\BACKED\REPO\M22N\M220NTests\bin\Debug\netcoreapp3.1\M220N.pdb
+C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.csproj.AssemblyReference.cache
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.GeneratedMSBuildEditorConfig.editorconfig
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.AssemblyInfoInputs.cache
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.AssemblyInfo.cs
@@ -196,4 +197,3 @@ C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.csproj.CopyCom
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.dll
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.pdb
 C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.genruntimeconfig.cache
-C:\BACKED\REPO\M22N\M220NTests\obj\Debug\netcoreapp3.1\M220NTests.csproj.AssemblyReference.cache

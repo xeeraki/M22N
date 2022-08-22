@@ -54,16 +54,12 @@ namespace M220N.Repositories
             // Retrieve the user document corresponding with the user's email.
             //
             // //
-            try
-            {
+
                 return await _usersCollection.Aggregate()
                     .Match(Builders<User>.Filter.Eq(x => x.Email, email))
                     .FirstOrDefaultAsync(cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            
+
 
         }
 
@@ -84,7 +80,7 @@ namespace M220N.Repositories
                 {
                     Name = name,
                     Email = email,
-                    Password = PasswordHashOMatic.Hash(password)
+                    HashedPassword = PasswordHashOMatic.Hash(password)
                 };
 
             
@@ -144,16 +140,16 @@ namespace M220N.Repositories
                 // setting the former to the email and the latter to the
                 // user.AuthToken that is passed in from the Controller.
                 var filter = Builders<Session>.Filter.Eq(s => s.UserId, user.Email);
-                await _sessionsCollection.Aggregate()
-                        .Match(filter)
-                        .FirstOrDefaultAsync(cancellationToken);
+                //await _sessionsCollection.Aggregate()
+                        //.Match(filter)
+                        //.FirstOrDefaultAsync(cancellationToken);
                 // 
                 // If the session doesn't exist, allow MongoDB to create a
                 // new one by passing the IsUpsert update option.
-                await _sessionsCollection.UpdateOneAsync(
-                 new BsonDocument("$set", new BsonDocument("session", "UserId")),
-                 Builders<Session>.Update.Set(t => t.UserId, "user_id").Set(t => t.Jwt, "user.AuthToken"),
-                 new UpdateOptions { IsUpsert = true }) ;
+                await _sessionsCollection.UpdateOneAsync(filter,
+                 //new BsonDocument("$set", new BsonDocument("sessions", "user_id")),
+                 Builders<Session>.Update.Set(t => t.UserId, user.Email).Set(t => t.Jwt, user.AuthToken),
+                 new UpdateOptions { IsUpsert = true });
 
                 storedUser.AuthToken = user.AuthToken;
                 return new UserResponse(storedUser);
@@ -176,7 +172,7 @@ namespace M220N.Repositories
             // TODO Ticket: User Management
             // Delete the document in the `sessions` collection matching the email.
             
-            await _sessionsCollection.DeleteOneAsync(new BsonDocument(), cancellationToken);
+            await _sessionsCollection.DeleteOneAsync(new BsonDocument("email", email), cancellationToken);
             return new UserResponse(true, "User logged out.");
         }
 
@@ -190,7 +186,7 @@ namespace M220N.Repositories
         {
             // TODO Ticket: User Management
             // Retrieve the session document corresponding with the user's email.
-            return await _sessionsCollection.Find(new BsonDocument()).FirstOrDefaultAsync();
+            return await _sessionsCollection.Find(new BsonDocument("email", email)).FirstOrDefaultAsync();
         }
 
         /// <summary>

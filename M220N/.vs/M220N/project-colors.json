@@ -5,6 +5,11 @@
       "ProjectGuid": "868999b0-3fa5-45e1-a594-4aecaa674ade",
       "DisplayName": "M220N",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

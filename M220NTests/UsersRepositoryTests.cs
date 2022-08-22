@@ -28,7 +28,7 @@ namespace M220NTests
         public async Task TestReturnsUser()
         {
             var user = await _userRepository.GetUserAsync("sean_bean@gameofthron.es");
-            Assert.AreEqual("Ned Stark", user.Email);
+            Assert.AreEqual("Ned Stark", user.Name);
         }
 
         [Test]
